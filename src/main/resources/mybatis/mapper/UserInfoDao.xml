@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lick.dal.UserInfoDao">
+    <sql id="BASE_COLUMN">
+        ui.user_code,ui.user_name,ui.user_sex
+    </sql>
+
+    <select id="getUserInfo" resultType="com.lick.model.UserInfo">
+        select <include refid="BASE_COLUMN"/> from user_info ui where ui.user_code=#{userCode}
+    </select>
+</mapper>
